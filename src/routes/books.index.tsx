@@ -5,7 +5,7 @@ import { BookCard } from "@/components/BookCard";
 import { books, categories, getBooksByCategory } from "@/data/books";
 import { useState } from "react";
 
-export const Route = createFileRoute("/books")({
+export const Route = createFileRoute("/books/")({
   head: () => ({
     meta: [
       { title: "تصفح الكتب - دار الكرمة" },
