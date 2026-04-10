@@ -8,9 +8,9 @@ import { useState } from "react";
 export const Route = createFileRoute("/books/")({
   head: () => ({
     meta: [
-      { title: "تصفح الكتب - دار الكرمة" },
+      { title: "تصفح الكتب - دار الكرم" },
       { name: "description", content: "تصفح مجموعتنا المتنوعة من الكتب العربية والمترجمة" },
-      { property: "og:title", content: "تصفح الكتب - دار الكرمة" },
+      { property: "og:title", content: "تصفح الكتب - دار الكرم" },
       { property: "og:description", content: "تصفح مجموعتنا المتنوعة من الكتب العربية والمترجمة" },
     ],
   }),

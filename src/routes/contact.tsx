@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "تواصل معنا - دار الكرمة" },
-      { name: "description", content: "تواصل مع دار الكرمة للنشر والتوزيع والترجمة" },
-      { property: "og:title", content: "تواصل معنا - دار الكرمة" },
-      { property: "og:description", content: "تواصل مع دار الكرمة للنشر والتوزيع والترجمة" },
+      { title: "تواصل معنا - دار الكرم" },
+      { name: "description", content: "تواصل مع دار الكرم للنشر والتوزيع والترجمة" },
+      { property: "og:title", content: "تواصل معنا - دار الكرم" },
+      { property: "og:description", content: "تواصل مع دار الكرم للنشر والتوزيع والترجمة" },
     ],
   }),
   component: ContactPage,
