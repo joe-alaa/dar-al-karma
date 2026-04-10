@@ -230,3 +230,11 @@ export function getBestSellers(): Book[] {
 export function getBookById(id: string): Book | undefined {
   return books.find((b) => b.id === id);
 }
+
+export function searchBooks(query: string): Book[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return books.filter(
+    (b) => b.title.includes(q) || b.author.includes(q)
+  );
+}
