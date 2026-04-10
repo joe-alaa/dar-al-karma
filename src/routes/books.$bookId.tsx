@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { getBookById } from "@/data/books";
+import { getBookById, categories } from "@/data/books";
 import { useLocationPricing } from "@/hooks/use-location-pricing";
 import { useCart } from "@/hooks/use-cart";
 import { ShoppingCart, Star, ArrowRight, BookOpen, Calendar } from "lucide-react";
@@ -107,7 +107,19 @@ function BookDetailPage() {
             <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
               <div className="bg-card rounded-lg p-4 border border-border">
                 <p className="text-muted-foreground">التصنيف</p>
-                <p className="font-bold text-foreground mt-1">{book.category}</p>
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {(() => {
+                    const allSlugs = [book.categorySlug, ...(book.additionalCategories || [])];
+                    return allSlugs.map((slug) => {
+                      const cat = categories.find((c) => c.slug === slug);
+                      return cat ? (
+                        <span key={slug} className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">
+                          {cat.icon} {cat.name}
+                        </span>
+                      ) : null;
+                    });
+                  })()}
+                </div>
               </div>
               <div className="bg-card rounded-lg p-4 border border-border">
                 <p className="text-muted-foreground">سنة النشر</p>
