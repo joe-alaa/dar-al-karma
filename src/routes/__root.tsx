@@ -35,10 +35,14 @@ export const Route = createRootRoute({
       { name: "description", content: "دار الكرمة - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
       { name: "author", content: "دار الكرمة" },
       { property: "og:title", content: "دار الكرمة للنشر والتوزيع والترجمة" },
-      { property: "og:description", content: "دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
+      { property: "og:description", content: "دار الكرمة - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "دار الكرمة للنشر والتوزيع والترجمة" },
+      { name: "twitter:description", content: "دار الكرمة - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9b4acc43-9167-4821-b7fe-7da014d60fe8/id-preview-7d4c36c2--69c46b1a-5fa0-4733-9e4a-fdec80197e8f.lovable.app-1775833103059.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9b4acc43-9167-4821-b7fe-7da014d60fe8/id-preview-7d4c36c2--69c46b1a-5fa0-4733-9e4a-fdec80197e8f.lovable.app-1775833103059.png" },
     ],
     links: [
       {
