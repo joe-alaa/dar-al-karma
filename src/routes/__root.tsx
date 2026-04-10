@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { LocationPricingProvider } from "@/hooks/use-location-pricing";
 
 import appCss from "../styles.css?url";
 
@@ -8,17 +9,17 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">
-          Page not found
+          الصفحة غير موجودة
         </h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          الصفحة التي تبحث عنها غير موجودة أو تم نقلها.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            العودة للرئيسية
           </Link>
         </div>
       </div>
@@ -38,11 +39,8 @@ export const Route = createRootRoute({
       { property: "og:description", content: "دار الكرمة - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "دار الكرمة للنشر والتوزيع والترجمة" },
       { name: "twitter:description", content: "دار الكرمة - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9b4acc43-9167-4821-b7fe-7da014d60fe8/id-preview-7d4c36c2--69c46b1a-5fa0-4733-9e4a-fdec80197e8f.lovable.app-1775833103059.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9b4acc43-9167-4821-b7fe-7da014d60fe8/id-preview-7d4c36c2--69c46b1a-5fa0-4733-9e4a-fdec80197e8f.lovable.app-1775833103059.png" },
     ],
     links: [
       {
@@ -58,7 +56,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         <HeadContent />
       </head>
@@ -71,5 +69,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <LocationPricingProvider>
+      <Outlet />
+    </LocationPricingProvider>
+  );
 }
