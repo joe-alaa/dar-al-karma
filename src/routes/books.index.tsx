@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BookCard } from "@/components/BookCard";
@@ -14,15 +14,13 @@ export const Route = createFileRoute("/books/")({
       { property: "og:description", content: "تصفح مجموعتنا المتنوعة من الكتب العربية والمترجمة" },
     ],
   }),
-  validateSearch: (search: Record<string, unknown>) => ({
-    category: (search.category as string) || undefined,
-  }),
   component: BooksPage,
 });
 
 function BooksPage() {
-  const { category } = Route.useSearch();
-  const [selectedCategory, setSelectedCategory] = useState(category || "");
+  const urlParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : new URLSearchParams();
+  const initialCategory = urlParams.get("category") || "";
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [sortBy, setSortBy] = useState("default");
 
   let filteredBooks = selectedCategory
