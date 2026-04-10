@@ -53,7 +53,7 @@ function CartPage() {
           <ShoppingCart className="h-20 w-20 text-muted-foreground mx-auto mb-6" />
           <h1 className="font-heading text-3xl font-bold text-foreground mb-4">السلة فارغة</h1>
           <p className="text-muted-foreground mb-8">لم تضف أي كتب بعد</p>
-          <Link to="/books" search={{}}>
+          <Link to="/books" search={{ category: undefined }}>
             <Button size="lg">تصفح الكتب</Button>
           </Link>
         </div>

@@ -46,7 +46,7 @@ function HomePage() {
                 نفتح لك أبواب المعرفة من خلال مجموعة متنوعة من أفضل الكتب العربية والمترجمة
               </p>
               <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
-                <Link to="/books" search={{}}>
+                <Link to="/books" search={{ category: undefined }}>
                   <Button variant="hero" size="xl">
                     تصفح الكتب
                     <ArrowLeft className="h-5 w-5" />
@@ -89,7 +89,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h2 className="font-heading text-3xl font-bold text-foreground">كتب مميزة</h2>
-            <Link to="/books" search={{}} className="text-primary text-sm font-medium hover:underline">عرض الكل</Link>
+            <Link to="/books" search={{ category: undefined }} className="text-primary text-sm font-medium hover:underline">عرض الكل</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {featured.slice(0, 4).map((book) => (
