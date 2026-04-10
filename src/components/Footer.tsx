@@ -24,7 +24,7 @@ export function Footer() {
             <h4 className="font-heading text-lg font-bold mb-4">روابط سريعة</h4>
             <div className="space-y-2">
               <Link to="/" className="block text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">الرئيسية</Link>
-              <Link to="/books" className="block text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">تصفح الكتب</Link>
+              <Link to="/books" search={{}} className="block text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">تصفح الكتب</Link>
               <Link to="/about" className="block text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">من نحن</Link>
               <Link to="/contact" className="block text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">تواصل معنا</Link>
             </div>

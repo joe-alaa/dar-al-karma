@@ -24,7 +24,7 @@ export const Route = createFileRoute("/books/$bookId")({
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-foreground">الكتاب غير موجود</h1>
-        <Link to="/books" className="text-primary mt-4 inline-block">العودة للكتب</Link>
+        <Link to="/books" search={{}} className="text-primary mt-4 inline-block">العودة للكتب</Link>
       </div>
     </div>
   ),
@@ -56,7 +56,7 @@ function BookDetailPage() {
     <div className="min-h-screen">
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Link to="/books" className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline mb-6">
+        <Link to="/books" search={{}} className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline mb-6">
           <ArrowRight className="h-4 w-4" />
           العودة للكتب
         </Link>
