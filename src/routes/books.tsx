@@ -15,7 +15,7 @@ export const Route = createFileRoute("/books")({
     ],
   }),
   validateSearch: (search: Record<string, unknown>) => ({
-    category: (search.category as string) || "",
+    category: (search.category as string) || undefined,
   }),
   component: BooksPage,
 });
