@@ -46,8 +46,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-            <img src={logo} alt="دار الكرمة" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
-            <span className="font-heading text-base sm:text-lg font-bold text-primary hidden sm:block">دار الكرمة</span>
+            <img src={logo} alt="دار الكرم" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
+            <span className="font-heading text-base sm:text-lg font-bold text-primary hidden sm:block">دار الكرم</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-1">

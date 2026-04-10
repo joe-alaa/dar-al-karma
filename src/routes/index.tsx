@@ -10,9 +10,9 @@ import logo from "@/assets/logo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "دار الكرمة للنشر والتوزيع والترجمة" },
-      { name: "description", content: "دار الكرمة - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
-      { property: "og:title", content: "دار الكرمة للنشر والتوزيع والترجمة" },
+      { title: "دار الكرم للنشر والتوزيع والترجمة" },
+      { name: "description", content: "دار الكرم - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
+      { property: "og:title", content: "دار الكرم للنشر والتوزيع والترجمة" },
       { property: "og:description", content: "دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
     ],
   }),
@@ -37,7 +37,7 @@ function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
             <div className="flex-1 text-center md:text-right order-2 md:order-1">
               <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl font-black text-primary-foreground text-shadow-soft leading-tight">
-                دار الكرمة
+                دار الكرم
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/80 mt-2 sm:mt-3 font-heading">
                 للنشر والتوزيع والترجمة
@@ -60,7 +60,7 @@ function HomePage() {
               </div>
             </div>
             <div className="flex-shrink-0 order-1 md:order-2">
-              <img src={logo} alt="دار الكرمة" className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full shadow-2xl border-4 border-primary-foreground/20" />
+              <img src={logo} alt="دار الكرم" className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full shadow-2xl border-4 border-primary-foreground/20" />
             </div>
           </div>
         </div>

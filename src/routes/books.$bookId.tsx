@@ -12,9 +12,9 @@ export const Route = createFileRoute("/books/$bookId")({
     const book = getBookById(params.bookId);
     return {
       meta: [
-        { title: book ? `${book.title} - دار الكرمة` : "كتاب - دار الكرمة" },
+        { title: book ? `${book.title} - دار الكرم` : "كتاب - دار الكرم" },
         { name: "description", content: book?.description || "" },
-        { property: "og:title", content: book ? `${book.title} - دار الكرمة` : "كتاب" },
+        { property: "og:title", content: book ? `${book.title} - دار الكرم` : "كتاب" },
         { property: "og:description", content: book?.description || "" },
       ],
     };

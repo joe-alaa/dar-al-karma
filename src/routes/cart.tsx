@@ -10,8 +10,8 @@ import { useState } from "react";
 export const Route = createFileRoute("/cart")({
   head: () => ({
     meta: [
-      { title: "السلة - دار الكرمة" },
-      { name: "description", content: "سلة المشتريات - دار الكرمة" },
+      { title: "السلة - دار الكرم" },
+      { name: "description", content: "سلة المشتريات - دار الكرم" },
     ],
   }),
   component: CartPage,
@@ -33,7 +33,7 @@ function CartPage() {
       .join("\n");
 
     const message = encodeURIComponent(
-      `🛒 طلب جديد من دار الكرمة\n\n` +
+      `🛒 طلب جديد من دار الكرم\n\n` +
       `👤 الاسم: ${name}\n` +
       `📱 الهاتف: ${phone}\n` +
       `📍 العنوان: ${address}\n\n` +

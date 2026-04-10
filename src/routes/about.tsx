@@ -7,10 +7,10 @@ import logo from "@/assets/logo.png";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "من نحن - دار الكرمة" },
-      { name: "description", content: "تعرف على دار الكرمة للنشر والتوزيع والترجمة - رسالتنا ورؤيتنا" },
-      { property: "og:title", content: "من نحن - دار الكرمة" },
-      { property: "og:description", content: "تعرف على دار الكرمة للنشر والتوزيع والترجمة" },
+      { title: "من نحن - دار الكرم" },
+      { name: "description", content: "تعرف على دار الكرم للنشر والتوزيع والترجمة - رسالتنا ورؤيتنا" },
+      { property: "og:title", content: "من نحن - دار الكرم" },
+      { property: "og:description", content: "تعرف على دار الكرم للنشر والتوزيع والترجمة" },
     ],
   }),
   component: AboutPage,
@@ -22,14 +22,14 @@ function AboutPage() {
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <img src={logo} alt="دار الكرمة" className="h-32 w-32 rounded-full mx-auto mb-6 shadow-lg" />
-          <h1 className="font-heading text-4xl font-bold text-foreground">دار الكرمة</h1>
+          <img src={logo} alt="دار الكرم" className="h-32 w-32 rounded-full mx-auto mb-6 shadow-lg" />
+          <h1 className="font-heading text-4xl font-bold text-foreground">دار الكرم</h1>
           <p className="text-xl text-muted-foreground mt-2">للنشر والتوزيع والترجمة</p>
         </div>
 
         <div className="prose prose-lg max-w-none text-foreground">
           <p className="text-lg leading-relaxed text-muted-foreground mb-8">
-            تأسست دار الكرمة بهدف نشر المعرفة والثقافة العربية، وتقديم أفضل الإصدارات الأدبية والفكرية للقارئ العربي.
+            تأسست دار الكرم بهدف نشر المعرفة والثقافة العربية، وتقديم أفضل الإصدارات الأدبية والفكرية للقارئ العربي.
             نسعى لبناء جسور ثقافية من خلال ترجمة الأعمال العالمية المتميزة ونشر الإبداعات العربية الأصيلة.
           </p>
         </div>

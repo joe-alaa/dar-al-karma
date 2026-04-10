@@ -9,9 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="دار الكرمة" className="h-12 w-12 sm:h-14 sm:w-14 rounded-full" />
+              <img src={logo} alt="دار الكرم" className="h-12 w-12 sm:h-14 sm:w-14 rounded-full" />
               <div>
-                <h3 className="font-heading text-lg sm:text-xl font-bold">دار الكرمة</h3>
+                <h3 className="font-heading text-lg sm:text-xl font-bold">دار الكرم</h3>
                 <p className="text-xs sm:text-sm text-primary-foreground/70">للنشر والتوزيع والترجمة</p>
               </div>
             </div>
@@ -52,7 +52,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-sm text-primary-foreground/50">
-          <p>© {new Date().getFullYear()} دار الكرمة للنشر والتوزيع والترجمة. جميع الحقوق محفوظة.</p>
+          <p>© {new Date().getFullYear()} دار الكرم للنشر والتوزيع والترجمة. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
