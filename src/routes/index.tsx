@@ -70,10 +70,10 @@ function HomePage() {
       <section className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-8 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
           {[
-            { icon: BookOpen, label: "كتاب متاح", value: "+500" },
-            { icon: Users, label: "قارئ سعيد", value: "+10,000" },
-            { icon: Globe, label: "دولة", value: "+15" },
-            { icon: BookOpen, label: "مؤلف", value: "+200" },
+            { icon: BookOpen, label: "كتاب متاح", value: "+60" },
+            { icon: Users, label: "قارئ سعيد", value: "+1000" },
+            { icon: Globe, label: "دولة", value: "+3" },
+            { icon: BookOpen, label: "مؤلف", value: "+60" },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center gap-1.5 sm:gap-2">
               <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-gold" />

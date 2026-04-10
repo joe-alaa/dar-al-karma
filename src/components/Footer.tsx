@@ -33,7 +33,7 @@ export function Footer() {
           <div>
             <h4 className="font-heading text-lg font-bold mb-4">تواصل معنا</h4>
             <div className="space-y-2 text-sm text-primary-foreground/70">
-              <p>البريد: info@daralkarma.com</p>
+              <p>البريد: <p>البريد: info@daralkarm.com</p></p>
               <p>الهاتف: +20 128 948 2247</p>
               <p>القاهرة، مصر</p>
             </div>
