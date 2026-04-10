@@ -44,14 +44,6 @@ function BookDetailPage() {
     );
   }
 
-  const colors = [
-    "from-primary/80 to-secondary/80",
-    "from-secondary/80 to-primary/60",
-    "from-primary/60 to-secondary/60",
-    "from-secondary/70 to-primary/70",
-  ];
-  const colorClass = colors[parseInt(book.id) % colors.length];
-
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -62,11 +54,17 @@ function BookDetailPage() {
         </Link>
 
         <div className="grid md:grid-cols-2 gap-10">
-          <div className={`aspect-[3/4] bg-gradient-to-br ${colorClass} rounded-2xl flex items-center justify-center p-10 relative`}>
-            <div className="text-center text-primary-foreground">
-              <p className="font-heading text-4xl font-bold text-shadow-soft leading-tight">{book.title}</p>
-              <p className="text-lg mt-4 text-primary-foreground/80">{book.author}</p>
-            </div>
+          <div className="aspect-[3/4] rounded-2xl overflow-hidden relative">
+            {book.cover ? (
+              <img src={book.cover} alt={book.title} className="w-full h-full object-cover" />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-primary/80 to-secondary/80 flex items-center justify-center p-10">
+                <div className="text-center text-primary-foreground">
+                  <p className="font-heading text-4xl font-bold leading-tight">{book.title}</p>
+                  <p className="text-lg mt-4 text-primary-foreground/80">{book.author}</p>
+                </div>
+              </div>
+            )}
             {book.isBestSeller && (
               <span className="absolute top-4 left-4 gold-gradient text-gold-foreground text-sm font-bold px-4 py-2 rounded-full">
                 الأكثر مبيعًا
