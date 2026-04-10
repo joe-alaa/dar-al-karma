@@ -41,7 +41,7 @@ function ContactPage() {
         </div>
 
         <div className="text-center">
-          <a <a href="https://wa.me/201289482247" target="_blank" rel="noopener noreferrer"> target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/201289482247" target="_blank" rel="noopener noreferrer">
             <Button size="xl" className="gap-2 bg-green-600 hover:bg-green-700 text-white">
               <MessageCircle className="h-5 w-5" />
               تواصل عبر واتساب
