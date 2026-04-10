@@ -105,15 +105,14 @@ function HomePage() {
           <h2 className="font-heading text-3xl font-bold text-foreground mb-8 text-center">التصنيفات</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {categories.map((cat) => (
-              <Link
+              <a
                 key={cat.slug}
-                to="/books"
-                search={{ category: cat.slug }}
+                href={`/books?category=${cat.slug}`}
                 className="bg-card rounded-xl p-6 text-center card-hover border border-border group"
               >
                 <span className="text-4xl block mb-3">{cat.icon}</span>
                 <h3 className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">{cat.name}</h3>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
