@@ -41,6 +41,8 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "دار الكرم للنشر والتوزيع والترجمة" },
       { name: "twitter:description", content: "دار الكرم - دار نشر عربية متخصصة في نشر وتوزيع وترجمة أفضل الكتب" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/07b4b841-0216-4169-b5b8-af50cc437050/id-preview-2b60b9d3--cbc6f16c-1a34-4645-96ce-f47ed51b26d3.lovable.app-1775847476997.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/07b4b841-0216-4169-b5b8-af50cc437050/id-preview-2b60b9d3--cbc6f16c-1a34-4645-96ce-f47ed51b26d3.lovable.app-1775847476997.png" },
     ],
     links: [
       {
