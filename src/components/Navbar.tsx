@@ -110,7 +110,7 @@ export function Navbar() {
                     }}
                     className="w-full flex items-center gap-3 px-4 py-3 hover:bg-accent transition-colors text-right"
                   >
-                    <div className="w-8 h-10 bg-gradient-to-br from-primary/60 to-secondary/60 rounded flex-shrink-0" />
+                    <img src={book.cover} alt={book.title} className="w-8 h-10 rounded object-cover flex-shrink-0" />
                     <div className="min-w-0 flex-1">
                       <p className="font-heading font-bold text-foreground text-sm truncate">{book.title}</p>
                       <p className="text-xs text-muted-foreground">{book.author}</p>
