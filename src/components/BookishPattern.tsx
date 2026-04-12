@@ -2,13 +2,23 @@
  * Rich literary SVG patterns — open books, stacked spines, inkwells, feather quills,
  * reading glasses, bookmarks, coffee cups, and scattered letters.
  */
-export function BookishPattern({ className = "", opacity = 0.07 }: { className?: string; opacity?: number }) {
+export function BookishPattern({ className = "", opacity = 0.07, animated = true }: { className?: string; opacity?: number; animated?: boolean }) {
   return (
     <svg
       className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity }}
     >
+      {animated && (
+        <style>{`
+          @keyframes patternDrift {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(-12px, -8px); }
+            100% { transform: translate(0, 0); }
+          }
+          .bookish-drift { animation: patternDrift 25s ease-in-out infinite; }
+        `}</style>
+      )}
       <defs>
         <pattern id="bookish" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
           {/* Open book with visible pages */}
