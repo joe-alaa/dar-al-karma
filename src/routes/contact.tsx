@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contact")({
@@ -28,21 +28,21 @@ function ContactPage() {
             <MessageCircle className="h-8 w-8 text-gold flex-shrink-0" />
             <div>
               <h3 className="font-heading font-bold text-foreground">واتساب للطلب</h3>
-              <p className="text-muted-foreground mt-1" dir="ltr">+20 128 948 2247</p>
+              <a href="tel:+201289482247" className="text-muted-foreground mt-1 block" dir="ltr">+20 128 948 2247</a>
             </div>
           </div>
           <div className="bg-card rounded-xl p-6 border border-border flex items-start gap-4">
             <Phone className="h-8 w-8 text-gold flex-shrink-0" />
             <div>
               <h3 className="font-heading font-bold text-foreground">التواصل هاتفياً للطلب</h3>
-              <p className="text-muted-foreground mt-1" dir="ltr">+20 115 805 5158</p>
+              <a href="tel:+2001158055158" className="text-muted-foreground mt-1 block" dir="ltr">+20 115 805 5158</a>
             </div>
           </div>
           <div className="bg-card rounded-xl p-6 border border-border flex items-start gap-4">
             <Mail className="h-8 w-8 text-gold flex-shrink-0" />
             <div>
               <h3 className="font-heading font-bold text-foreground">لإرسال الأعمال للنشر</h3>
-              <p className="text-muted-foreground mt-1">darelkarm@gmail.com</p>
+              <a href="mailto:darelkarm@gmail.com" className="text-muted-foreground mt-1 block">darelkarm@gmail.com</a>
             </div>
           </div>
           <div className="bg-card rounded-xl p-6 border border-border flex items-start gap-4">
@@ -54,13 +54,31 @@ function ContactPage() {
           </div>
         </div>
 
+        {/* Bank Info */}
+        <div className="bg-card rounded-xl p-6 border border-border mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <CreditCard className="h-6 w-6 text-gold" />
+            <h2 className="font-heading text-xl font-bold text-foreground">بيانات الحساب البنكي</h2>
+          </div>
+          <div className="space-y-3">
+            <div>
+              <p className="text-sm text-muted-foreground">رقم الحساب البنكي (IBAN)</p>
+              <p className="font-mono font-bold text-foreground mt-1 text-sm" dir="ltr">EG790005101700000117030811001</p>
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">رقم التحويل</p>
+              <p className="font-mono font-bold text-foreground mt-1" dir="ltr">+20 128 948 2247</p>
+            </div>
+          </div>
+        </div>
+
         {/* Social */}
         <div className="bg-card rounded-xl p-6 border border-border mb-12">
           <h2 className="font-heading text-xl font-bold text-foreground mb-4 text-center">منصاتنا</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://www.facebook.com/share/16XWvn1gR8/" target="_blank" rel="noopener noreferrer" className="bg-muted rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">📘 فيسبوك</a>
-            <a href="https://www.tiktok.com/@darelkarm12" target="_blank" rel="noopener noreferrer" className="bg-muted rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">🎵 تيك توك</a>
-            <a href="https://www.instagram.com/darelkarm12" target="_blank" rel="noopener noreferrer" className="bg-muted rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">📸 انستغرام</a>
+            <a href="https://www.facebook.com/share/16XWvn1gR8/" target="_blank" rel="noopener noreferrer" className="bg-muted rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">فيسبوك</a>
+            <a href="https://www.tiktok.com/@darelkarm12" target="_blank" rel="noopener noreferrer" className="bg-muted rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">تيك توك</a>
+            <a href="https://www.instagram.com/darelkarm12" target="_blank" rel="noopener noreferrer" className="bg-muted rounded-lg px-4 py-3 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-colors">انستغرام</a>
           </div>
         </div>
 

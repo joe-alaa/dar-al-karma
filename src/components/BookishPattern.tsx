@@ -58,20 +58,20 @@ export function BookishPattern({ className = "", opacity = 0.07, animated = true
           {/* Bookmark ribbon */}
           <path d="M120 85 L120 115 L125 108 L130 115 L130 85" stroke="currentColor" fill="none" strokeWidth="0.8" strokeLinejoin="round" />
 
-          {/* Coffee cup (reader's companion) */}
+          {/* Coffee cup */}
           <ellipse cx="30" cy="170" rx="8" ry="3" stroke="currentColor" fill="none" strokeWidth="0.7" />
           <path d="M22 170 L24 185 Q30 189 36 185 L38 170" stroke="currentColor" fill="none" strokeWidth="0.7" />
           <path d="M38 174 Q44 174 44 178 Q44 182 38 182" stroke="currentColor" fill="none" strokeWidth="0.6" />
           <path d="M28 166 Q29 162 30 166" stroke="currentColor" fill="none" strokeWidth="0.4" />
           <path d="M32 165 Q33 160 34 165" stroke="currentColor" fill="none" strokeWidth="0.4" />
 
-          {/* Scattered Arabic-style letters / text lines */}
+          {/* Scattered text lines */}
           <line x1="80" y1="160" x2="110" y2="160" stroke="currentColor" strokeWidth="0.5" />
           <line x1="83" y1="165" x2="107" y2="165" stroke="currentColor" strokeWidth="0.5" />
           <line x1="86" y1="170" x2="104" y2="170" stroke="currentColor" strokeWidth="0.5" />
           <line x1="89" y1="175" x2="101" y2="175" stroke="currentColor" strokeWidth="0.5" />
 
-          {/* Scroll / manuscript */}
+          {/* Scroll */}
           <path d="M150 120 Q145 120 145 125 L145 155 Q145 160 150 160 L175 160 Q180 160 180 155 L180 125 Q180 120 175 120 Z" stroke="currentColor" fill="none" strokeWidth="0.7" />
           <path d="M145 125 Q150 128 145 131" stroke="currentColor" fill="none" strokeWidth="0.5" />
           <line x1="152" y1="130" x2="173" y2="130" stroke="currentColor" strokeWidth="0.4" />
@@ -79,7 +79,7 @@ export function BookishPattern({ className = "", opacity = 0.07, animated = true
           <line x1="152" y1="140" x2="173" y2="140" stroke="currentColor" strokeWidth="0.4" />
           <line x1="152" y1="145" x2="170" y2="145" stroke="currentColor" strokeWidth="0.4" />
 
-          {/* Small decorative dots */}
+          {/* Small dots */}
           <circle cx="110" cy="95" r="1.5" fill="currentColor" />
           <circle cx="70" cy="80" r="1" fill="currentColor" />
           <circle cx="180" cy="90" r="1.2" fill="currentColor" />
@@ -97,15 +97,14 @@ export function BookishPattern({ className = "", opacity = 0.07, animated = true
 }
 
 /**
- * Light decorative pattern for white/light backgrounds.
- * Subtle dots, open books, and page corners in muted primary color.
+ * Light decorative pattern for white/light backgrounds — more visible version.
  */
 export function LightBookPattern({ className = "" }: { className?: string }) {
   return (
     <svg
       className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
       xmlns="http://www.w3.org/2000/svg"
-      style={{ opacity: 0.04 }}
+      style={{ opacity: 0.07 }}
     >
       <style>{`
         @keyframes lightDrift {
@@ -116,35 +115,65 @@ export function LightBookPattern({ className = "" }: { className?: string }) {
         .light-drift { animation: lightDrift 30s ease-in-out infinite; }
       `}</style>
       <defs>
-        <pattern id="light-bookish" x="0" y="0" width="160" height="160" patternUnits="userSpaceOnUse">
-          {/* Small open book */}
-          <path d="M20 80 L35 70 L50 80" stroke="currentColor" fill="none" strokeWidth="1" strokeLinecap="round" />
-          <path d="M35 70 L35 55" stroke="currentColor" fill="none" strokeWidth="0.8" />
+        <pattern id="light-bookish" x="0" y="0" width="220" height="220" patternUnits="userSpaceOnUse">
+          {/* Open book */}
+          <path d="M20 100 L45 85 L70 100" stroke="currentColor" fill="none" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M45 85 L45 60" stroke="currentColor" fill="none" strokeWidth="1" strokeLinecap="round" />
+          <path d="M25 95 Q45 80 65 95" stroke="currentColor" fill="none" strokeWidth="0.6" />
+          <path d="M28 90 Q45 77 62 90" stroke="currentColor" fill="none" strokeWidth="0.6" />
+          {/* Text lines on left page */}
+          <line x1="26" y1="72" x2="43" y2="72" stroke="currentColor" strokeWidth="0.5" />
+          <line x1="28" y1="76" x2="43" y2="76" stroke="currentColor" strokeWidth="0.5" />
+          {/* Text lines on right page */}
+          <line x1="47" y1="72" x2="63" y2="72" stroke="currentColor" strokeWidth="0.5" />
+          <line x1="47" y1="76" x2="61" y2="76" stroke="currentColor" strokeWidth="0.5" />
 
-          {/* Page corner fold */}
-          <path d="M120 20 L130 20 L130 30 Z" stroke="currentColor" fill="currentColor" strokeWidth="0.5" opacity="0.5" />
-          <rect x="110" y="20" width="20" height="28" rx="1" stroke="currentColor" fill="none" strokeWidth="0.6" />
+          {/* Stacked books */}
+          <rect x="140" y="40" width="10" height="50" rx="1.5" stroke="currentColor" fill="none" strokeWidth="0.8" />
+          <rect x="152" y="35" width="12" height="55" rx="1.5" stroke="currentColor" fill="none" strokeWidth="0.8" />
+          <rect x="166" y="42" width="9" height="48" rx="1.5" stroke="currentColor" fill="none" strokeWidth="0.8" />
 
-          {/* Tiny pencil */}
-          <line x1="80" y1="120" x2="95" y2="105" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
-          <path d="M95 105 L97 103 L99 105 L97 107 Z" fill="currentColor" opacity="0.6" />
-          <line x1="80" y1="120" x2="79" y2="122" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" />
+          {/* Feather quill with ink */}
+          <path d="M100 50 Q105 30 110 15" stroke="currentColor" fill="none" strokeWidth="1" strokeLinecap="round" />
+          <path d="M110 15 Q113 25 107 30 Q102 22 110 15" stroke="currentColor" fill="none" strokeWidth="0.8" />
+          <circle cx="99" cy="54" r="1.5" fill="currentColor" />
+
+          {/* Coffee cup */}
+          <ellipse cx="35" cy="160" rx="10" ry="4" stroke="currentColor" fill="none" strokeWidth="0.8" />
+          <path d="M25 160 L28 178 Q35 183 42 178 L45 160" stroke="currentColor" fill="none" strokeWidth="0.8" />
+          <path d="M45 164 Q52 164 52 169 Q52 174 45 174" stroke="currentColor" fill="none" strokeWidth="0.7" />
+          {/* Steam */}
+          <path d="M32 155 Q33 150 34 155" stroke="currentColor" fill="none" strokeWidth="0.5" />
+          <path d="M37 154 Q38 148 39 154" stroke="currentColor" fill="none" strokeWidth="0.5" />
+
+          {/* Bookmark */}
+          <path d="M120 130 L120 165 L126 156 L132 165 L132 130" stroke="currentColor" fill="none" strokeWidth="0.9" strokeLinejoin="round" />
+
+          {/* Reading glasses */}
+          <circle cx="85" cy="150" r="8" stroke="currentColor" fill="none" strokeWidth="0.7" />
+          <circle cx="105" cy="150" r="8" stroke="currentColor" fill="none" strokeWidth="0.7" />
+          <path d="M93 150 Q95 147 97 150" stroke="currentColor" fill="none" strokeWidth="0.6" />
+          <line x1="77" y1="150" x2="70" y2="145" stroke="currentColor" strokeWidth="0.6" strokeLinecap="round" />
+
+          {/* Scroll */}
+          <path d="M150 140 Q145 140 145 145 L145 180 Q145 185 150 185 L185 185 Q190 185 190 180 L190 145 Q190 140 185 140 Z" stroke="currentColor" fill="none" strokeWidth="0.7" />
+          <line x1="153" y1="152" x2="182" y2="152" stroke="currentColor" strokeWidth="0.4" />
+          <line x1="153" y1="158" x2="182" y2="158" stroke="currentColor" strokeWidth="0.4" />
+          <line x1="153" y1="164" x2="180" y2="164" stroke="currentColor" strokeWidth="0.4" />
+          <line x1="153" y1="170" x2="176" y2="170" stroke="currentColor" strokeWidth="0.4" />
+
+          {/* Small stars */}
+          <path d="M15 30 L16 27 L17 30 L20 31 L17 32 L16 35 L15 32 L12 31 Z" fill="currentColor" opacity="0.6" />
+          <path d="M200 110 L201 108 L202 110 L204 111 L202 112 L201 114 L200 112 L198 111 Z" fill="currentColor" opacity="0.5" />
 
           {/* Dot clusters */}
-          <circle cx="70" cy="40" r="1.2" fill="currentColor" />
-          <circle cx="75" cy="43" r="0.8" fill="currentColor" />
-          <circle cx="68" cy="45" r="1" fill="currentColor" />
+          <circle cx="80" cy="25" r="1.5" fill="currentColor" opacity="0.5" />
+          <circle cx="85" cy="28" r="1" fill="currentColor" opacity="0.4" />
+          <circle cx="78" cy="30" r="1.2" fill="currentColor" opacity="0.45" />
 
-          {/* Text lines on a page */}
-          <line x1="110" y1="100" x2="140" y2="100" stroke="currentColor" strokeWidth="0.4" />
-          <line x1="112" y1="105" x2="138" y2="105" stroke="currentColor" strokeWidth="0.4" />
-          <line x1="114" y1="110" x2="136" y2="110" stroke="currentColor" strokeWidth="0.4" />
-
-          {/* Small bookmark */}
-          <path d="M30 130 L30 150 L34 145 L38 150 L38 130" stroke="currentColor" fill="none" strokeWidth="0.6" />
-
-          {/* Tiny star */}
-          <path d="M140 60 L141 57 L142 60 L145 61 L142 62 L141 65 L140 62 L137 61 Z" fill="currentColor" opacity="0.5" />
+          {/* Page corner */}
+          <rect x="170" y="10" width="22" height="30" rx="1.5" stroke="currentColor" fill="none" strokeWidth="0.7" />
+          <path d="M184 10 L192 10 L192 18 Z" stroke="currentColor" fill="currentColor" strokeWidth="0.5" opacity="0.3" />
         </pattern>
       </defs>
       <g className="light-drift">

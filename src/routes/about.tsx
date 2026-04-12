@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { BookOpen, Globe, Users, Award, Calendar, Heart } from "lucide-react";
+import { BookOpen, Globe, Users, Award, Calendar, Heart, CreditCard } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/about")({
@@ -43,7 +43,7 @@ function AboutPage() {
         </div>
 
         {/* Values cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {[
             { icon: BookOpen, title: "رسالتنا", text: "نشر المعرفة وتوفير كتب عالية الجودة تثري العقل العربي ومساعدة الأدباء والشباب في مشوارهم الأدبي" },
             { icon: Globe, title: "رؤيتنا", text: "أن نكون الوجهة الأولى للقراء العرب حول العالم ونوصل إصداراتنا لكل مكان" },
@@ -56,6 +56,24 @@ function AboutPage() {
               <p className="text-muted-foreground">{item.text}</p>
             </div>
           ))}
+        </div>
+
+        {/* Bank Info */}
+        <div className="bg-card rounded-xl p-6 sm:p-8 border border-border mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <CreditCard className="h-6 w-6 text-gold" />
+            <h2 className="font-heading text-xl font-bold text-foreground">بيانات الحساب البنكي</h2>
+          </div>
+          <div className="space-y-3">
+            <div>
+              <p className="text-sm text-muted-foreground">رقم الحساب البنكي (IBAN)</p>
+              <p className="font-mono font-bold text-foreground mt-1 text-sm" dir="ltr">EG790005101700000117030811001</p>
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground">رقم التحويل</p>
+              <p className="font-mono font-bold text-foreground mt-1" dir="ltr">+20 128 948 2247</p>
+            </div>
+          </div>
         </div>
 
         {/* Leadership */}
