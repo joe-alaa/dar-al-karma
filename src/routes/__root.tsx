@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { LocationPricingProvider } from "@/hooks/use-location-pricing";
+import { LightBookPattern } from "@/components/BookishPattern";
 
 import appCss from "../styles.css?url";
 
@@ -73,7 +74,12 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <LocationPricingProvider>
-      <Outlet />
+      <div className="relative min-h-screen">
+        <LightBookPattern className="text-primary z-0 fixed" />
+        <div className="relative z-10">
+          <Outlet />
+        </div>
+      </div>
     </LocationPricingProvider>
   );
 }
