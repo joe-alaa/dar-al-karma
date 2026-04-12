@@ -89,7 +89,67 @@ export function BookishPattern({ className = "", opacity = 0.07, animated = true
           <path d="M165 180 L166 178 L167 180 L169 181 L167 182 L166 184 L165 182 L163 181 Z" fill="currentColor" />
         </pattern>
       </defs>
-      <rect width="100%" height="100%" fill="url(#bookish)" />
+      <g className={animated ? "bookish-drift" : ""}>
+        <rect width="200%" height="200%" x="-50%" y="-50%" fill="url(#bookish)" />
+      </g>
+    </svg>
+  );
+}
+
+/**
+ * Light decorative pattern for white/light backgrounds.
+ * Subtle dots, open books, and page corners in muted primary color.
+ */
+export function LightBookPattern({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ opacity: 0.04 }}
+    >
+      <style>{`
+        @keyframes lightDrift {
+          0% { transform: translate(0, 0); }
+          50% { transform: translate(8px, 6px); }
+          100% { transform: translate(0, 0); }
+        }
+        .light-drift { animation: lightDrift 30s ease-in-out infinite; }
+      `}</style>
+      <defs>
+        <pattern id="light-bookish" x="0" y="0" width="160" height="160" patternUnits="userSpaceOnUse">
+          {/* Small open book */}
+          <path d="M20 80 L35 70 L50 80" stroke="currentColor" fill="none" strokeWidth="1" strokeLinecap="round" />
+          <path d="M35 70 L35 55" stroke="currentColor" fill="none" strokeWidth="0.8" />
+
+          {/* Page corner fold */}
+          <path d="M120 20 L130 20 L130 30 Z" stroke="currentColor" fill="currentColor" strokeWidth="0.5" opacity="0.5" />
+          <rect x="110" y="20" width="20" height="28" rx="1" stroke="currentColor" fill="none" strokeWidth="0.6" />
+
+          {/* Tiny pencil */}
+          <line x1="80" y1="120" x2="95" y2="105" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" />
+          <path d="M95 105 L97 103 L99 105 L97 107 Z" fill="currentColor" opacity="0.6" />
+          <line x1="80" y1="120" x2="79" y2="122" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" />
+
+          {/* Dot clusters */}
+          <circle cx="70" cy="40" r="1.2" fill="currentColor" />
+          <circle cx="75" cy="43" r="0.8" fill="currentColor" />
+          <circle cx="68" cy="45" r="1" fill="currentColor" />
+
+          {/* Text lines on a page */}
+          <line x1="110" y1="100" x2="140" y2="100" stroke="currentColor" strokeWidth="0.4" />
+          <line x1="112" y1="105" x2="138" y2="105" stroke="currentColor" strokeWidth="0.4" />
+          <line x1="114" y1="110" x2="136" y2="110" stroke="currentColor" strokeWidth="0.4" />
+
+          {/* Small bookmark */}
+          <path d="M30 130 L30 150 L34 145 L38 150 L38 130" stroke="currentColor" fill="none" strokeWidth="0.6" />
+
+          {/* Tiny star */}
+          <path d="M140 60 L141 57 L142 60 L145 61 L142 62 L141 65 L140 62 L137 61 Z" fill="currentColor" opacity="0.5" />
+        </pattern>
+      </defs>
+      <g className="light-drift">
+        <rect width="200%" height="200%" x="-50%" y="-50%" fill="url(#light-bookish)" />
+      </g>
     </svg>
   );
 }
