@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/use-cart";
 import { useLocationPricing } from "@/hooks/use-location-pricing";
-import { Trash2, Plus, Minus, ShoppingCart, MessageCircle } from "lucide-react";
+import { Trash2, Plus, Minus, ShoppingCart, MessageCircle, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/cart")({
@@ -71,8 +71,14 @@ function CartPage() {
         <div className="space-y-3 sm:space-y-4 mb-8">
           {items.map((item) => (
             <div key={item.book.id} className="bg-card rounded-xl p-3 sm:p-4 border border-border flex items-center gap-3 sm:gap-4">
-              <div className="w-12 h-16 sm:w-16 sm:h-20 bg-gradient-to-br from-primary/60 to-secondary/60 rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-primary-foreground text-[10px] sm:text-xs font-bold text-center px-1 leading-tight">{item.book.title}</span>
+              <div className="w-12 h-16 sm:w-16 sm:h-20 rounded-lg flex-shrink-0 overflow-hidden">
+                {item.book.cover ? (
+                  <img src={item.book.cover} alt={item.book.title} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-primary/60 to-secondary/60 flex items-center justify-center">
+                    <span className="text-primary-foreground text-[10px] sm:text-xs font-bold text-center px-1 leading-tight">{item.book.title}</span>
+                  </div>
+                )}
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-heading font-bold text-foreground text-sm truncate">{item.book.title}</h3>
@@ -95,11 +101,17 @@ function CartPage() {
           ))}
         </div>
 
-        <div className="bg-card rounded-xl p-4 sm:p-6 border border-border mb-6">
+        <div className="bg-card rounded-xl p-4 sm:p-6 border border-border mb-4">
           <div className="flex items-center justify-between text-base sm:text-lg">
             <span className="font-heading font-bold text-foreground">الإجمالي</span>
             <span className="font-bold text-primary text-xl sm:text-2xl">{totalPrice} {currencySymbol}</span>
           </div>
+        </div>
+
+        {/* Delivery fee note */}
+        <div className="flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-amber-800">
+          <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
+          <p className="text-sm font-medium">السعر لا يشمل رسوم التوصيل</p>
         </div>
 
         {!showCheckout ? (
@@ -131,6 +143,10 @@ function CartPage() {
               rows={3}
               className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
             />
+            <div className="flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg p-3 text-amber-800">
+              <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
+              <p className="text-sm font-medium">السعر لا يشمل رسوم التوصيل — سيتم تحديد رسوم التوصيل عبر واتساب</p>
+            </div>
             <Button
               size="xl"
               className="w-full gap-2 bg-green-600 hover:bg-green-700 text-white"

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getBookById, categories } from "@/data/books";
 import { useLocationPricing } from "@/hooks/use-location-pricing";
 import { useCart } from "@/hooks/use-cart";
-import { ShoppingCart, Star, ArrowRight, BookOpen, Calendar } from "lucide-react";
+import { ShoppingCart, Star, ArrowRight, BookOpen, Calendar, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/books/$bookId")({
   head: ({ params }) => {
@@ -43,6 +43,13 @@ function BookDetailPage() {
       </div>
     );
   }
+
+  const handleEbookRequest = () => {
+    const message = encodeURIComponent(
+      `مرحباً، أريد طلب النسخة الإلكترونية من كتاب "${book.title}" للمؤلف ${book.author}`
+    );
+    window.open(`https://wa.me/201289482247?text=${message}`, "_blank");
+  };
 
   return (
     <div className="min-h-screen">
@@ -97,10 +104,14 @@ function BookDetailPage() {
 
             <p className="mt-6 text-muted-foreground leading-relaxed">{book.description}</p>
 
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Button size="xl" onClick={() => addToCart(book)} className="gap-2 flex-1">
                 <ShoppingCart className="h-5 w-5" />
                 أضف إلى السلة
+              </Button>
+              <Button size="xl" variant="outline" onClick={handleEbookRequest} className="gap-2 flex-1 border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+                <MessageCircle className="h-5 w-5" />
+                اطلب نسختك الإلكترونية
               </Button>
             </div>
 
@@ -114,7 +125,7 @@ function BookDetailPage() {
                       const cat = categories.find((c) => c.slug === slug);
                       return cat ? (
                         <span key={slug} className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">
-                          {cat.icon} {cat.name}
+                          {cat.name}
                         </span>
                       ) : null;
                     });

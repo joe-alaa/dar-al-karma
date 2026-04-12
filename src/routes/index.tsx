@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BookCard } from "@/components/BookCard";
 import { BookishPattern } from "@/components/BookishPattern";
+import { CategoryIcon } from "@/components/CategoryIcon";
 import { Button } from "@/components/ui/button";
 import { getFeaturedBooks, getBestSellers, categories } from "@/data/books";
 import { ArrowLeft, BookOpen, Users, Globe, Sparkles } from "lucide-react";
@@ -80,10 +81,10 @@ function HomePage() {
       <section className="bg-card border-b border-border relative -mt-6 sm:-mt-8 z-10 mx-4 sm:mx-8 lg:mx-auto max-w-5xl rounded-2xl shadow-xl">
         <div className="px-4 py-6 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
           {[
-            { icon: BookOpen, label: "كتاب متاح", value: "+60" },
+            { icon: BookOpen, label: "كتاب متاح", value: "+100" },
             { icon: Users, label: "قارئ سعيد", value: "+1000" },
-            { icon: Globe, label: "دولة", value: "+3" },
-            { icon: BookOpen, label: "مؤلف", value: "+60" },
+            { icon: Globe, label: "دولة", value: "+10" },
+            { icon: BookOpen, label: "مؤلف", value: "+100" },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center gap-1 sm:gap-2 group">
               <div className="p-2 sm:p-2.5 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -101,7 +102,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-6 sm:mb-10">
             <div>
-              <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground">✨ كتب مميزة</h2>
+              <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground">كتب مميزة</h2>
               <p className="text-muted-foreground text-xs sm:text-sm mt-1">اختيارات مميزة من دار الكرم</p>
             </div>
             <Link to="/books" className="text-primary text-xs sm:text-sm font-medium hover:underline inline-flex items-center gap-1">
@@ -122,7 +123,7 @@ function HomePage() {
       {/* Categories */}
       <section className="py-10 sm:py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground mb-2 text-center">📚 التصنيفات</h2>
+          <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground mb-2 text-center">التصنيفات</h2>
           <p className="text-muted-foreground text-xs sm:text-sm text-center mb-6 sm:mb-8">اكتشف الكتب حسب اهتماماتك</p>
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-4">
             {categories.filter(c => c.slug !== "best-sellers").map((cat, i) => (
@@ -133,7 +134,9 @@ function HomePage() {
                 className="bg-card rounded-xl p-3 sm:p-5 text-center card-hover border border-border group animate-fade-in"
                 style={{ animationDelay: `${i * 50}ms`, animationFillMode: 'both' }}
               >
-                <span className="text-2xl sm:text-4xl block mb-1 sm:mb-3 group-hover:scale-110 transition-transform inline-block">{cat.icon}</span>
+                <div className="flex justify-center mb-1 sm:mb-3">
+                  <CategoryIcon slug={cat.slug} className="h-8 w-8 sm:h-10 sm:w-10 text-primary group-hover:scale-110 transition-transform" />
+                </div>
                 <h3 className="font-heading font-bold text-foreground text-xs sm:text-base group-hover:text-primary transition-colors">{cat.name}</h3>
               </Link>
             ))}
@@ -146,7 +149,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-6 sm:mb-10">
             <div>
-              <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground">🔥 الأكثر مبيعًا</h2>
+              <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground">الأكثر مبيعًا</h2>
               <p className="text-muted-foreground text-xs sm:text-sm mt-1">الكتب الأكثر طلبًا من قرائنا</p>
             </div>
             <Link to="/books" search={{ category: "best-sellers" }} className="text-primary text-xs sm:text-sm font-medium hover:underline inline-flex items-center gap-1">
@@ -154,8 +157,8 @@ function HomePage() {
               <ArrowLeft className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
-            {bestSellers.slice(0, 8).map((book, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-6">
+            {bestSellers.slice(0, 3).map((book, i) => (
               <div key={book.id} className="animate-fade-in" style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }}>
                 <BookCard book={book} />
               </div>
@@ -189,7 +192,7 @@ function HomePage() {
       {/* Testimonials */}
       <section className="py-10 sm:py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground mb-2 text-center">💬 آراء القراء</h2>
+          <h2 className="font-heading text-xl sm:text-3xl font-bold text-foreground mb-2 text-center">آراء القراء</h2>
           <p className="text-muted-foreground text-xs sm:text-sm text-center mb-6 sm:mb-8">ماذا يقول قراؤنا عنّا</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {[
