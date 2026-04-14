@@ -82,6 +82,9 @@ function BookDetailPage() {
           <div>
             <h1 className="font-heading text-3xl font-bold text-foreground">{book.title}</h1>
             <p className="text-lg text-muted-foreground mt-2">{book.author}</p>
+            {book.translator && (
+              <p className="text-sm text-muted-foreground mt-1">ترجمة: {book.translator}</p>
+            )}
 
             <div className="flex items-center gap-4 mt-4">
               <div className="flex items-center gap-1">
